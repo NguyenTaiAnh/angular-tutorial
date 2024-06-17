@@ -1,6 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { ThemeService } from './core/services/theme.service';
 
 export interface User{
   name:string;
@@ -18,4 +19,14 @@ export class AppComponent {
     age: 18
   };
 
+  constructor(
+    public themeService: ThemeService,
+  ){
+    this.themeService.setTheme(this.themeService.getTheme());
+  }
+
+  toggleTheme(){
+    const newTheme = this.themeService.getTheme() === 'light' ? 'dark' : 'light';
+    this.themeService.setTheme(newTheme);
+  }
 }

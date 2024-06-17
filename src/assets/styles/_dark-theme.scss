@@ -1,0 +1,12 @@
+:root {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    /* Các biến CSS khác cho dark theme */
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* Các style khác cho dark theme */
+  }
+  

@@ -1,0 +1,19 @@
+import { Injectable } from "@angular/core";
+
+@Injectable({
+    providedIn: 'root',
+})
+
+export class ThemeService{
+    private currentTheme: string = 'dark';
+    constructor() { }
+
+    setTheme(theme: string): void {
+      this.currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  
+    getTheme(): string {
+      return this.currentTheme;
+    }
+}

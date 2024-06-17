@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
+import { ThemeService } from './core/services/theme.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
