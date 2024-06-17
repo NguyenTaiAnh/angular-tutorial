@@ -1,14 +1,11 @@
-<h1>hello</h1>
-<app-home></app-home>
-<button nz-button nzType="primary">Primary</button>
-<div class="flex">
-  <div class="flex-none w-14 ...">
-    01
-  </div>
-  <div class="flex-initial w-64 ...">
-    02
-  </div>
-  <div class="flex-initial w-32 ...">
-    03
-  </div>
+<div class="container mx-auto px-4">
+  <h1> Angular Version: {{title}}</h1>
+
+  <!-- để sử dụng được ngmodelchange hay ngmodel thì cần import FormsModule -->
+  <input type="text" class="border-2" [ngModel]="user.name" (ngModelChange)="user.name = $event" >
+  <p>{{user.name}}</p>
+
+  <p>thay vi sử dụng <b>property binding</b> và <b>event binding</b> ta có thể có cách khác là:</p>
+  <b>two-way binding  [(ngModel)]</b>
+  <input type="text" [(ngModel)]="user.name" class="border-8">
 </div>
