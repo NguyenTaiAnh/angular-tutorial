@@ -4,10 +4,11 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterOutlet } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
     declarations:[AppComponent, HomeComponent],
-    imports:[CommonModule,RouterOutlet, BrowserModule],
+    imports:[CommonModule,RouterOutlet, BrowserModule,NzButtonModule],
     bootstrap:[AppComponent],
 })
 export class AppModule {}
