@@ -1,13 +1,6 @@
-<button nz-button (click)="toggleTheme()">Toggle Theme</button>
-<p>Current Theme: {{ themeService.getTheme() }}</p>
-<div class="container mx-auto px-4">
-  <h1> Angular Version: {{title}}</h1>
+<nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/login">login</a>
+</nav>
 
-  <!-- để sử dụng được ngmodelchange hay ngmodel thì cần import FormsModule -->
-  <input type="text" class="border-2" [ngModel]="user.name" (ngModelChange)="user.name = $event" >
-  <p>{{user.name}}</p>
-
-  <p>thay vi sử dụng <b>property binding</b> và <b>event binding</b> ta có thể có cách khác là:</p>
-  <b>two-way binding  [(ngModel)]</b>
-  <input type="text" [(ngModel)]="user.name" class="border-8">
-</div>
+<router-outlet></router-outlet>

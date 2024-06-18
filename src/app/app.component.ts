@@ -19,10 +19,19 @@ export class AppComponent {
     age: 18
   };
 
+  listUsers: User[] = [];
+
   constructor(
     public themeService: ThemeService,
   ){
     this.themeService.setTheme(this.themeService.getTheme());
+    for(let i = 0; i < 10; i++){
+      let user = {
+        name: this.user.name + i,
+        age: this.user.age + i,
+      }
+      this.listUsers.push(user)
+    }
   }
 
   toggleTheme(){

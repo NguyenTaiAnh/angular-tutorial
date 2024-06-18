@@ -1,0 +1,15 @@
+<nz-page-header class="site-page-header" nzTitle="Title" nzSubtitle="This is a subtitle">
+    <nz-breadcrumb nz-page-header-breadcrumb>
+      <nz-breadcrumb-item>{{firstName}}</nz-breadcrumb-item>
+      <nz-breadcrumb-item (click)="emitData()">
+        <a>String</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item (click)="emitObjectData()">
+        <a>Oject</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item (click)="emitArrayData()">
+        <a>Array</a>
+      </nz-breadcrumb-item>
+      <!-- <nz-breadcrumb-item>Third-level Menu</nz-breadcrumb-item> -->
+    </nz-breadcrumb>
+  </nz-page-header>
