@@ -1,7 +1,26 @@
-<app-navbar 
-    [firstName]="firstName"
-    (dataEmitObject)="reciveObject($event)"
-    (dataEmitArray)="reciveArray($event)"
-    (dataEmitString)="reciveString($event)"
+<app-navbar
+  [firstName]="firstName"
+  (dataEmitObject)="reciveObject($event)"
+  (dataEmitArray)="reciveArray($event)"
+  (dataEmitString)="reciveString($event)"
 />
 <h1>hello</h1>
+
+<input
+  appTestDirective
+  type="text"
+  (dataChange)="reciveFn($event)"
+  [title]="'test title'"
+  [dataObj]="{
+    tt1: 'hello',
+    tt2: 'hi'
+  }"
+/>
+
+<ng-container *ngFor="let item of listUsers">
+    <ul *ngIf="item.age > 20">
+        <li>{{item.name}}</li>
+        <li [ngStyle]="{background: item.age > 23 ?'red':'blue'}">{{item.age}}</li>
+    </ul>
+
+</ng-container>
