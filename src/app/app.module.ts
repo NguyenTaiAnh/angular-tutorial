@@ -10,6 +10,11 @@ import { ThemeService } from './core/services/theme.service';
 import { HomeModule } from './features/home/home.module';
 import { LoginModule } from './features/login/login.module';
 import { AppRoutingModule } from './app.routes';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +27,12 @@ import { AppRoutingModule } from './app.routes';
     NzButtonModule,
     FormsModule,
     HomeModule,
-    LoginModule
+    LoginModule,
+    NzLayoutModule,
+    NzBreadCrumbModule,
+    NzCollapseModule,
+    NzIconModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent],
 })

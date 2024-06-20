@@ -20,7 +20,7 @@ export class AppComponent {
   };
 
   listUsers: User[] = [];
-
+  isCollapsed = false;
   constructor(
     public themeService: ThemeService,
   ){

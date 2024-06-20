@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { NavbarModule } from '../../UI/navbar/navbar.module';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +14,11 @@ import { NavbarModule } from '../../UI/navbar/navbar.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    NavbarModule
+    ReactiveFormsModule,
+    FormsModule,
+    NavbarModule,
+    NzFormModule,
+    NzInputModule
   ],
   exports:[LoginComponent]
 })

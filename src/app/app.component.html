@@ -1,6 +1,51 @@
-<nav>
-  <a routerLink="/">Home</a>
-  <a routerLink="/login">login</a>
-</nav>
-
-<router-outlet></router-outlet>
+<nz-layout class="h-screen">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul nz-menu nzMode="inline" class="sider-menu">
+      <!-- <li class="flex" style="margin: 30px 0 30px 20px">
+        <img src="../assets/images/avatar_default.png" alt="" />
+        <div class="user">
+          <p>123456</p>
+          <p>Admin</p>
+        </div>
+      </li> -->
+      <li
+        nz-menu-item
+        routerLink="/home"
+      >
+        <img src="../assets/icons/merchant_list.svg" nz-icon />
+        <span class="title-menu">Home</span>
+      </li>
+      <li
+        nz-menu-item
+        routerLink="/login"
+      >
+        <img src="../assets/icons/pms_manage.svg" nz-icon />
+        <span class="title-menu">Login</span>
+      </li>
+      <!-- <li nz-menu-item class="logout" (click)="logout()">
+        <img src="../assets/icons/logout.svg" nz-icon />
+        <span class="title-menu">Logout</span>
+      </li> -->
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <span
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></span>
+    </nz-header>
+    <nz-content>
+      <!-- <nz-breadcrumb>
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="inner-content">Bill is a cat.</div> -->
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
