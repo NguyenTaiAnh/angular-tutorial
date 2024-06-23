@@ -1,0 +1,39 @@
+.login-form {
+    width: 100%;
+}
+
+// .login-form-margin {
+//     margin-bottom: 16px;
+// }
+
+// .login-form-forgot {
+//     float: right;
+// }
+
+.login-form-button {
+    width: 100%;
+}
+.logo{
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+    img{
+        width: 20%;
+    display: inline-flex;
+    }
+}
+.login-form{
+    width: 100%;
+    padding: 0 10%;
+}
+
+.form-center.signup-form{
+    border: 1px solid;
+    width: 100%;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}

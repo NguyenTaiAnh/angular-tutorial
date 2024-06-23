@@ -1,4 +1,4 @@
-<app-navbar
+<!-- <app-navbar
   [firstName]="firstName"
   (dataEmitObject)="reciveObject($event)"
   (dataEmitArray)="reciveArray($event)"
@@ -23,4 +23,101 @@
         <li [ngStyle]="{background: item.age > 23 ?'red':'blue'}">{{item.age}}</li>
     </ul>
 
-</ng-container>
+</ng-container> -->
+<div>
+  <div class="new-update">
+    <label class="title">Truyện mới cập nhật</label>
+    <div
+      nz-row
+      [nzGutter]="[16, 16]"
+      style="width: 100%; margin: 0px !important; padding: 16px"
+    >
+      <ng-container *ngFor="let novel of listNovels">
+        <div
+          nz-col
+          class="gutter-row"
+          [nzMd]="12"
+          [nzSm]="24"
+          [nzLg]="8"
+          [nzXl]="6"
+          [nzXXl]="6"
+          class="card-container"
+        >
+          <app-card [novel]="novel"></app-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="favorite-stories">
+
+    <label class="title">Truyện yêu thích</label>
+    <div
+      nz-row
+      [nzGutter]="[16, 16]"
+      style="width: 100%; margin: 0px !important; padding: 16px"
+    >
+      <ng-container *ngFor="let novel of listNovels">
+        <div
+          nz-col
+          class="gutter-row"
+          [nzMd]="12"
+          [nzSm]="24"
+          [nzLg]="8"
+          [nzXl]="6"
+          [nzXXl]="6"
+          class="card-container"
+        >
+          <app-card [novel]="novel"></app-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="most-viewed">
+    <label class="title">Truyện được xem nhiều nhất</label>
+    <div
+      nz-row
+      [nzGutter]="[16, 16]"
+      style="width: 100%; margin: 0px !important; padding: 16px"
+    >
+      <ng-container *ngFor="let novel of listNovels">
+        <div
+          nz-col
+          class="gutter-row"
+          [nzMd]="12"
+          [nzSm]="24"
+          [nzLg]="8"
+          [nzXl]="6"
+          [nzXXl]="6"
+          class="card-container"
+        >
+          <app-card [novel]="novel"></app-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="confirm">
+    <label class="title">Truyện đã hoàn thành</label>
+    <div
+      nz-row
+      [nzGutter]="[16, 16]"
+      style="width: 100%; margin: 0px !important; padding: 16px"
+    >
+      <ng-container *ngFor="let novel of listNovels">
+        <div
+          nz-col
+          class="gutter-row"
+          [nzXs]="24"
+          [nzMd]="12"
+          [nzSm]="24"
+          [nzLg]="8"
+          [nzXl]="6"
+          [nzXXl]="6"
+          class="card-container"
+        >
+          <app-card [novel]="novel" [type]="'confirm'"></app-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,44 @@ export class AppComponent {
 
   listUsers: User[] = [];
   isCollapsed = false;
+  listMenu = [
+    {
+      name: "Home",
+      url:"/home",
+      isLast: false,
+      nzType: "home"
+    },
+    {
+      name: "Categories",
+      url:"/home",
+      isLast: false,
+      nzType: "database"
+    },
+    {
+      name: "Favorite",
+      url:"/home",
+      isLast: false,
+      nzType: "star"
+    },
+    {
+      name: "Histories",
+      url:"/home",
+      isLast: false,
+      nzType: "history"
+    },
+    {
+      name: "profile",
+      url:"/profile",
+      isLast: true,
+      nzType: "user"
+    },
+    {
+      name: "Login",
+      url:"/login",
+      isLast: true,
+      nzType: "login"
+    },
+  ]
   constructor(
     public themeService: ThemeService,
   ){

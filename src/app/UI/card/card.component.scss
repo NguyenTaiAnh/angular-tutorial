@@ -1,0 +1,57 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // width: 250px;
+    /* Adjust width as needed */
+    // margin: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.novel-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.novel-author,
+.novel-last-chapter,
+.novel-update-date {
+    margin-bottom: 5px;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    /* Rounded top corners */
+}
+
+.card-container {
+    animation: cardEntrance 0.5s ease-in-out;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

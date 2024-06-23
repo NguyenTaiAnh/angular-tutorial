@@ -1,21 +1,185 @@
-<form nz-form [nzLayout]="'inline'" [formGroup]="formGroup" (ngSubmit)="submitForm()">
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your username!">
-        <nz-input-group nzPrefixIcon="user">
-          <input formControlName="userName" nz-input placeholder="Username" />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your Password!">
-        <nz-input-group nzPrefixIcon="lock">
-          <input formControlName="password" nz-input type="password" placeholder="Password" />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control>
-        <button nz-button nzType="primary" [disabled]="!formGroup.valid">Log in</button>
-      </nz-form-control>
-    </nz-form-item>
-  </form>
+<div class="form-center">
+  <div class="logo">
+    <img src="../assets/icons/logo.png" alt="" />
+  </div>
+  <ng-container *ngIf="!isRegister; else register">
+    <form
+      nz-form
+      [formGroup]="formGroup"
+      class="login-form"
+      (ngSubmit)="submitForm(0)"
+    >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Email</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+          <input nz-input formControlName="email" placeholder="email address" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+          <input nz-input formControlName="password" placeholder="password" />
+        </nz-form-control>
+      </nz-form-item>
+      <!-- <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your email!">
+          <nz-input-group nzPrefixIcon="user">
+            <input
+              type="text"
+              nz-input
+              formControlName="email"
+              placeholder="email"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input
+              type="password"
+              nz-input
+              formControlName="password"
+              placeholder="Password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item> -->
+      <nz-form-item>
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          <div nz-row class="login-form-margin">
+            <div nz-col [nzSpan]="24">
+              <label nz-checkbox formControlName="remember" ngDefaultControl>
+                <span>Remember me</span>
+              </label>
+            </div>
+            <div nz-col [nzSpan]="24">
+              <a class="login-form-forgot">Forgot password</a>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item style="margin: 0!important;">
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          <button nz-button nzType="primary">Log in</button>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          Or
+          <a (click)="clickRegister()">register now!</a>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- <div nz-row class="login-form-margin">
+        <div nz-col [nzSpan]="24">
+          <label nz-checkbox formControlName="remember" ngDefaultControl>
+            <span>Remember me</span>
+          </label>
+        </div>
+        <div nz-col [nzSpan]="24">
+          <a class="login-form-forgot">Forgot password</a>
+        </div>
+      </div> -->
+      <!-- <button
+        nz-button
+        class="login-form-button login-form-margin"
+        [nzType]="'primary'"
+      >
+        Log in
+      </button>
+      Or
+      <a (click)="clickRegister()">register now!</a> -->
+    </form>
+  </ng-container>
+  <ng-template #register>
+    <form action="">
+      <form
+        nz-form
+        [nzAutoTips]="autoTips"
+        [formGroup]="validateForm"
+        (ngSubmit)="submitForm(1)"
+      >
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>Username</nz-form-label>
+          <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+            <input
+              nz-input
+              formControlName="userName"
+              placeholder="Username"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>Mobile</nz-form-label>
+          <nz-form-control [nzSpan]="12">
+            <input nz-input formControlName="mobile" placeholder="mobile" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+          <nz-form-control [nzSpan]="12">
+            <input
+              nz-input
+              formControlName="email"
+              placeholder="email"
+              type="email"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+          <nz-form-control
+            [nzSpan]="12"
+            nzDisableAutoTips
+            nzErrorTip="Please input your password!"
+          >
+            <input
+              nz-input
+              type="password"
+              formControlName="password"
+              (ngModelChange)="validateConfirmPassword()"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired
+            >Confirm Password</nz-form-label
+          >
+          <nz-form-control
+            [nzSpan]="12"
+            nzDisableAutoTips
+            [nzErrorTip]="passwordErrorTpl"
+          >
+            <input
+              nz-input
+              type="password"
+              formControlName="confirm"
+              placeholder="confirm your password"
+            />
+            <ng-template #passwordErrorTpl let-control>
+              @if (control.errors?.['required']) { Please confirm your
+              password!} @if (control.errors?.['confirm']) { Password is
+              inconsistent! }
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control [nzOffset]="7" [nzSpan]="12">
+            <button nz-button nzType="primary">Submit</button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control [nzOffset]="7" [nzSpan]="12">
+            <span
+            >Already have an account?
+            <a (click)="clickRegister()">Log in</a>.</span
+          >
+          </nz-form-control>
+        </nz-form-item>
+        
+      </form>
+      <!-- <a (click)="clickRegister()">register now!</a> -->
+    </form>
+  </ng-template>
+</div>
+<!-- Already have an account? Log in. -->

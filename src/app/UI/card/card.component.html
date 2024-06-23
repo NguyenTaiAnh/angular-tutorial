@@ -1,0 +1,27 @@
+<ng-template #nomal>
+  <div class="card-container">
+    <img [src]="novel.coverImage" alt="Novel Cover" />
+    <div class="card-content">
+      <h3 class="novel-title">{{ novel.name }}</h3>
+      <p class="novel-author">Tác giả: {{ novel.author }}</p>
+      <p class="novel-last-chapter">Chương {{ novel.lastChapter }}</p>
+      <p class="novel-update-date">
+        Cập nhật: {{ novel.updateDate | date : "yyyy-MM-dd" }}
+      </p>
+    </div>
+  </div>
+</ng-template>
+
+<ng-container *ngIf="type == 'confim'; else nomal">
+    <div class="card-container">
+        <img [src]="novel.coverImage" alt="Novel Cover" />
+        <div class="card-content">
+          <h3 class="novel-title">{{ novel.name }}</h3>
+          <p class="novel-author">Tác giả: {{ novel.author }}</p>
+          <p class="novel-last-chapter">Chương {{ novel.lastChapter }}</p>
+          <p class="novel-update-date">
+            Cập nhật: {{ novel.updateDate | date : "yyyy-MM-dd" }}
+          </p>
+        </div>
+      </div>
+</ng-container>

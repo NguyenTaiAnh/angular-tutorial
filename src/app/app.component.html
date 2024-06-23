@@ -1,32 +1,15 @@
-<nz-layout class="h-screen">
+<!-- <nz-layout class="h-screen layout">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-    <div class="logo"></div>
+    <div class="logo">
+      <img src="../assets/icons/logo.png" alt="" style="padding: 20px;" />
+    </div>
     <ul nz-menu nzMode="inline" class="sider-menu">
-      <!-- <li class="flex" style="margin: 30px 0 30px 20px">
-        <img src="../assets/images/avatar_default.png" alt="" />
-        <div class="user">
-          <p>123456</p>
-          <p>Admin</p>
-        </div>
-      </li> -->
-      <li
-        nz-menu-item
-        routerLink="/home"
-      >
-        <img src="../assets/icons/merchant_list.svg" nz-icon />
-        <span class="title-menu">Home</span>
-      </li>
-      <li
-        nz-menu-item
-        routerLink="/login"
-      >
-        <img src="../assets/icons/pms_manage.svg" nz-icon />
-        <span class="title-menu">Login</span>
-      </li>
-      <!-- <li nz-menu-item class="logout" (click)="logout()">
-        <img src="../assets/icons/logout.svg" nz-icon />
-        <span class="title-menu">Logout</span>
-      </li> -->
+      <ng-container *ngFor="let item of listMenu">
+        <li nz-menu-item [routerLink]="item?.url">
+          <span nz-icon [nzType]="item.nzType" nzTheme="outline"></span>
+          <span class="title-menu">{{item.name}}</span>
+        </li>
+      </ng-container>
     </ul>
   </nz-sider>
   <nz-layout>
@@ -39,12 +22,32 @@
       ></span>
     </nz-header>
     <nz-content>
-      <!-- <nz-breadcrumb>
-        <nz-breadcrumb-item>User</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
-      </nz-breadcrumb>
-      <div class="inner-content">Bill is a cat.</div> -->
       <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout> -->
+
+<nz-layout class="layout">
+  <nz-sider>
+    <div class="logo">
+      <img src="../assets/icons/logo.png" alt="" style="padding: 20px;" />
+    </div>
+    <ul nz-menu nzMode="inline" class="sider-menu">
+      <ng-container *ngFor="let item of listMenu">
+        <li nz-menu-item [routerLink]="item?.url">
+          <span nz-icon [nzType]="item.nzType" nzTheme="outline"></span>
+          <span class="title-menu">{{item.name}}</span>
+        </li>
+      </ng-container>
+    </ul>
+  </nz-sider>
+  <nz-layout class="right-layout">
+    <nz-header></nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
     </nz-content>
     <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
   </nz-layout>
