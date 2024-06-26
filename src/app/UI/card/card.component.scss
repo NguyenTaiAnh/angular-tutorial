@@ -17,7 +17,7 @@
 }
 
 .card-content {
-    padding: 15px;
+    padding: 5px;
 }
 
 .novel-title {
@@ -42,6 +42,21 @@ img {
 
 .card-container {
     animation: cardEntrance 0.5s ease-in-out;
+}
+.card{
+    animation: cardEntrance 0.5s ease-in-out;
+    .card-content{
+
+    }
+    .novel-title{
+
+    }
+    .novel-author{
+
+    }
+    .novel-last-chapter{
+        
+    }
 }
 
 @keyframes cardEntrance {

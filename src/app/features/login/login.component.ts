@@ -14,6 +14,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseService, User } from '../../core/services/base.service';
 
 @Component({
   selector: 'app-login',
@@ -38,15 +39,18 @@ import { ActivatedRoute, Router } from '@angular/router';
     ]),
   ],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends BaseService<User> implements OnInit {
   isRegister: boolean = false;
+  user: User[]=[
 
+  ];
   constructor(
     private fb: NonNullableFormBuilder,
     private router: Router,
     private route: ActivatedRoute
   ) {
-    
+    super()
+    this.model = this.user
   }
   ngOnInit(): void {}
   formGroup: FormGroup<{
@@ -101,9 +105,21 @@ export class LoginComponent implements OnInit {
     //     }
     //   });
     // }
+    const param = {
+      id: Math.floor(Math.random()*100),
+      username:  this.validateForm.value.userName || '',
+      email:  this.validateForm.value.email || '',
+      password:  this.validateForm.value.password || '',
+      mobile:  this.validateForm.value.mobile || ''
+    }
+    this.create(param)
+    console.log(this.user);
   }
 
   validateConfirmPassword(): void {
     setTimeout(() => this.validateForm.controls.confirm.updateValueAndValidity());
+  }
+  clickDetailUser(id:number){
+   console.log( this.get(id));
   }
 }

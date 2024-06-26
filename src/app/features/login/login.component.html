@@ -183,3 +183,17 @@
   </ng-template>
 </div>
 <!-- Already have an account? Log in. -->
+
+<ng-container *ngFor="let item of user">
+  <ul  style="border: 1px solid red; padding: 10px" (click)="clickDetailUser(item.id)">
+    <li>
+      {{item.username}}
+    </li>
+    <li>
+      {{item.email}}
+    </li>
+    <li>
+      {{item.mobile}}
+    </li>
+  </ul>
+</ng-container>

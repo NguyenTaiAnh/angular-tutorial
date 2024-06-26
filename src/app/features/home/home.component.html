@@ -36,11 +36,11 @@
         <div
           nz-col
           class="gutter-row"
-          [nzMd]="12"
+          [nzMd]="6"
           [nzSm]="24"
-          [nzLg]="8"
-          [nzXl]="6"
-          [nzXXl]="6"
+          [nzLg]="6"
+          [nzXl]="4"
+          [nzXXl]="4"
           class="card-container"
         >
           <app-card [novel]="novel"></app-card>
@@ -114,8 +114,9 @@
           [nzXl]="6"
           [nzXXl]="6"
           class="card-container"
+          (click)="clickDetail()"
         >
-          <app-card [novel]="novel" [type]="'confirm'"></app-card>
+        <app-card [novel]="novel" #story></app-card>
         </div>
       </ng-container>
     </div>

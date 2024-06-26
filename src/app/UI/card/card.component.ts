@@ -16,4 +16,7 @@ export class CardComponent {
   @Input() novel!: Novel;
   @Input() type!: string;
   
+  detail(){
+    alert("Card Detail");
+  }
 }

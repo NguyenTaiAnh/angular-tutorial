@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { CardComponent } from '../../UI/card/card.component';
 
 export interface User {
   name: string;
@@ -17,8 +18,9 @@ interface Novel {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-
+export class HomeComponent implements AfterViewInit {
+  @ViewChildren(CardComponent) list!: QueryList<CardComponent>
+  @ViewChild("story") story!: CardComponent
   novels:Novel ={
     name: 'Title 1',
     author: "John",
@@ -39,6 +41,11 @@ export class HomeComponent {
       this.listNovels.push(novel)
     }
   }
+  ngAfterViewInit(): void {
+    console.log(this.list);
+    // this.productItems.changes.subscribe(() => this.calculateTotalPrice());
+    this.list.changes.subscribe(i => console.log(i))
+  }
   firstName = "Home"
   reciveObject(e: any) {
     console.log("Recive object", e);
@@ -51,5 +58,8 @@ export class HomeComponent {
   }
   reciveFn(e: any) {
     console.log("Recive function", e);
+  }
+  clickDetail(){
+    this.story.detail()
   }
 }
