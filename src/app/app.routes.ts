@@ -19,6 +19,23 @@ export const routes: Routes = [
         path:'admin',
         loadChildren: ()=> import('./features/admin/admin.module').then((m)=> m.AdminModule)
       },
+      {
+        path:'categories',
+        loadChildren: ()=> import('./features/categories/categories.module').then((m)=> m.CategoriesModule)
+      },
+      {
+        path:'favorite',
+        loadChildren: ()=> import('./features/favorite/favorite.module').then((m)=> m.FavoriteModule)
+      },
+      {
+        path:'history',
+        loadChildren: ()=> import('./features/history/history.module').then((m)=> m.HistoryModule)
+      },
+      {
+        path:'profile',
+        loadChildren:()=> import('./features/profile/profile.module').then((m)=> m.ProfileModule)
+      },
+      
     
       // Nonexistent route
       {

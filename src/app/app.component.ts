@@ -30,19 +30,19 @@ export class AppComponent {
     },
     {
       name: "Categories",
-      url:"/home",
+      url:"/categories",
       isLast: false,
       nzType: "database"
     },
     {
       name: "Favorite",
-      url:"/home",
+      url:"/favorite",
       isLast: false,
       nzType: "star"
     },
     {
-      name: "Histories",
-      url:"/home",
+      name: "History",
+      url:"/history",
       isLast: false,
       nzType: "history"
     },
@@ -51,6 +51,12 @@ export class AppComponent {
       url:"/profile",
       isLast: true,
       nzType: "user"
+    },
+    {
+      name: "admin",
+      url:"/admin",
+      isLast: true,
+      nzType: "dashboard"
     },
     {
       name: "Login",
