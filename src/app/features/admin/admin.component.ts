@@ -7,8 +7,9 @@ import { BaseComponentService } from '../../core/services/base-component.service
   styleUrl: './admin.component.scss'
 })
 export class AdminComponent extends BaseComponentService implements OnInit {
+  constructor(){super()}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    console.log("addming admin");
   }
 
 }

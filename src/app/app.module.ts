@@ -13,6 +13,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminModule } from './features/admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,11 +27,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HomeModule,
     LoginModule,
+    AdminModule,
     NzLayoutModule,
     NzBreadCrumbModule,
     NzCollapseModule,
     NzIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
 })

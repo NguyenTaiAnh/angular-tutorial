@@ -8,13 +8,16 @@ import { UsersComponent } from './users/users.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ChaptersComponent } from './chapters/chapters.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
+import { AdminRoutingModule } from './admin-routing.module';
 
 
 
 @NgModule({
   declarations: [AdminComponent, StoriesComponent, CategoriesComponent, AuthorsComponent, UsersComponent, CommentsComponent, ChaptersComponent, DashboardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AdminRoutingModule
   ],
   exports:[AdminComponent]
 })
