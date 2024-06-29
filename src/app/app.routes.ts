@@ -15,6 +15,10 @@ export const routes: Routes = [
         path: 'login',
         loadChildren: () => import('./features/login/login.module').then((m)=> m.LoginModule)
       },
+      {
+        path:'admin',
+        loadChildren: ()=> import('./features/admin/admin.module').then((m)=> m.AdminModule)
+      },
     
       // Nonexistent route
       {
