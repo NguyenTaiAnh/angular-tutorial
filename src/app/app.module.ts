@@ -13,7 +13,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminModule } from './features/admin/admin.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,9 +25,7 @@ import { AdminModule } from './features/admin/admin.module';
     RouterOutlet,
     NzButtonModule,
     FormsModule,
-    HomeModule,
-    LoginModule,
-    AdminModule,
+    HttpClientModule, //fix error icon ng-zorro
     NzLayoutModule,
     NzBreadCrumbModule,
     NzCollapseModule,

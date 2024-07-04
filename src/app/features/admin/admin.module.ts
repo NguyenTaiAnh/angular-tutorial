@@ -8,16 +8,22 @@ import { UsersComponent } from './users/users.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ChaptersComponent } from './chapters/chapters.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RouterModule } from '@angular/router';
 import { AdminRoutingModule } from './admin-routing.module';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { SettingComponent } from './setting/setting.component';
+import { TableModule } from '../../UI/table/table.module';
 
 
 
 @NgModule({
-  declarations: [AdminComponent, StoriesComponent, CategoriesComponent, AuthorsComponent, UsersComponent, CommentsComponent, ChaptersComponent, DashboardComponent],
+  declarations: [AdminComponent, StoriesComponent, CategoriesComponent, AuthorsComponent, UsersComponent, CommentsComponent, ChaptersComponent, DashboardComponent, SettingComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    NzTabsModule,
+    NzIconModule,
+    AdminRoutingModule,
+    TableModule
   ],
   exports:[AdminComponent]
 })
