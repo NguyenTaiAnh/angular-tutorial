@@ -29,10 +29,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/styles/dark-theme",
-              "src/assets/styles/light-theme",
-              "src/assets/styles/layout",
-              "src/assets/styles/variables",
               {
                 "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",

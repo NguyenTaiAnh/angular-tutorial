@@ -9,7 +9,9 @@ export interface StoriesModel{
     image: string;
     views: number;
     likes: number;
-    comment_id:number
+    comment_id?:number,
+    create_date?:string;
+    update_date?:string;
 }
 
 // export interface StoryRequestModel{

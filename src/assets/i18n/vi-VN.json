@@ -1,0 +1,22 @@
+{
+    "categories":"Thể loại",
+    "login": {
+        "title": "Đăng nhập",
+        "username": "Tên đăng nhập",
+        "password": "Mật khẩu",
+        "loginButton": "Đăng nhập"
+    },
+    "Field":{
+        "StoryId":"Story Id",
+        "StoryName":"Tên Truyện",
+        "StoryTag":"Tag",
+        "StorySynopsis":"Mô Tả",
+        "AuthorId":"Id Tác Giả",
+        "Status":"Trạng Thái",
+        "CategoryId":"Id Thể Loại",
+        "Image":"Hình Ảnh",
+        "Views":"Lượt Xem",
+        "Likes":"Lượt Thích",
+        "Action":"Hoạt động"
+    }
+}

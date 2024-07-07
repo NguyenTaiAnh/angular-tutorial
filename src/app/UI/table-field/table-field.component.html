@@ -1,12 +1,4 @@
-<nz-table #basicTable [nzData]="dataList">
-  <thead>
-    <tr>
-      <th *ngFor="let column of columns" >
-        {{ column.header }}
-      </th>
-    </tr>
-  </thead>
-  <tbody>
+<tbody>
     <tr *ngFor="let data of dataList">
       <td *ngFor="let column of columns">{{ data[column.field] }}</td>
 
@@ -20,4 +12,3 @@
         </td> -->
     </tr>
   </tbody>
-</nz-table>

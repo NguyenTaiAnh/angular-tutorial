@@ -2,84 +2,93 @@ import { Component, VERSION } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './core/services/theme.service';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from './core/services/languege.service';
 
-export interface User{
-  name:string;
-  age:number;
+export interface User {
+  name: string;
+  age: number;
 }
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = VERSION.full;
   user: User = {
-    name: "Anh Dev",
-    age: 18
+    name: 'Anh Dev',
+    age: 18,
   };
 
   listUsers: User[] = [];
   isCollapsed = false;
   listMenu = [
     {
-      name: "Home",
-      url:"/home",
+      name: 'Home',
+      url: '/home',
       isLast: false,
-      nzType: "home"
+      nzType: 'home',
     },
     {
-      name: "Categories",
-      url:"/categories",
+      name: 'Categories',
+      url: '/categories',
       isLast: false,
-      nzType: "database"
+      nzType: 'database',
     },
     {
-      name: "Favorite",
-      url:"/favorite",
+      name: 'Favorite',
+      url: '/favorite',
       isLast: false,
-      nzType: "star"
+      nzType: 'star',
     },
     {
-      name: "History",
-      url:"/history",
+      name: 'History',
+      url: '/history',
       isLast: false,
-      nzType: "history"
+      nzType: 'history',
     },
     {
-      name: "profile",
-      url:"/profile",
+      name: 'profile',
+      url: '/profile',
       isLast: true,
-      nzType: "user"
+      nzType: 'user',
     },
     {
-      name: "admin",
-      url:"/admin",
+      name: 'admin',
+      url: '/admin',
       isLast: true,
-      nzType: "dashboard"
+      nzType: 'dashboard',
     },
     {
-      name: "Login",
-      url:"/login",
+      name: 'Login',
+      url: '/login',
       isLast: true,
-      nzType: "login"
+      nzType: 'login',
     },
-  ]
+  ];
   constructor(
     public themeService: ThemeService,
-  ){
+    private languageService: LanguageService,
+    private translate: TranslateService
+  ) {
     this.themeService.setTheme(this.themeService.getTheme());
-    for(let i = 0; i < 10; i++){
+    for (let i = 0; i < 10; i++) {
       let user = {
         name: this.user.name + i,
         age: this.user.age + i,
-      }
-      this.listUsers.push(user)
+      };
+      this.listUsers.push(user);
     }
   }
 
-  toggleTheme(){
-    const newTheme = this.themeService.getTheme() === 'light' ? 'dark' : 'light';
+  toggleTheme() {
+    const newTheme =
+      this.themeService.getTheme() === 'light' ? 'dark' : 'light';
     this.themeService.setTheme(newTheme);
+  }
+
+  changeLanguage(language: string): void {
+    this.languageService.switchLanguage(language);
   }
 }

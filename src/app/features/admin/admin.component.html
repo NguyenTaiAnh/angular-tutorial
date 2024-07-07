@@ -2,7 +2,7 @@
   <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate" nzLoadType="lazy">
     <ng-template #titleTemplate>
       <span nz-icon [nzType]="tab.icon || 'question-circle'"></span>
-      {{ tab.name }}
+      {{ tab.name | translate }}
     </ng-template>
    <ng-container *ngComponentOutlet="tab.component"></ng-container>
   </nz-tab>

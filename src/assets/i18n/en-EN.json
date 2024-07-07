@@ -1,0 +1,22 @@
+{
+    "categories":"Categories",
+    "login": {
+        "title": "Login",
+        "username": "Username",
+        "password": "Password",
+        "loginButton": "Login"
+    },
+    "Field":{
+        "StoryId":"Story Id",
+        "StoryName":"Name",
+        "StoryTag":"Tag",
+        "StorySynopsis":"Synopsis",
+        "AuthorId":"Author Id",
+        "Status":"Status",
+        "CategoryId":"Category Id",
+        "Image":"Image",
+        "Views":"Views",
+        "Likes":"Likes",
+        "Action":"Action"
+    }
+}

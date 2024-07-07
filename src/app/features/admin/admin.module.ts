@@ -13,6 +13,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { SettingComponent } from './setting/setting.component';
 import { TableModule } from '../../UI/table/table.module';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 
@@ -23,7 +24,8 @@ import { TableModule } from '../../UI/table/table.module';
     NzTabsModule,
     NzIconModule,
     AdminRoutingModule,
-    TableModule
+    TableModule,
+    TranslateModule
   ],
   exports:[AdminComponent]
 })

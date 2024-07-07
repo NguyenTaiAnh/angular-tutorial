@@ -31,19 +31,22 @@
 <nz-layout class="layout">
   <nz-sider>
     <div class="logo">
-      <img src="../assets/icons/logo.png" alt="" style="padding: 20px;" />
+      <img src="../assets/icons/logo.png" alt="" style="padding: 20px" />
     </div>
     <ul nz-menu nzMode="inline" class="sider-menu">
       <ng-container *ngFor="let item of listMenu">
         <li nz-menu-item [routerLink]="item?.url">
           <span nz-icon [nzType]="item.nzType" nzTheme="outline"></span>
-          <span class="title-menu">{{item.name}}</span>
+          <span class="title-menu">{{ item.name }}</span>
         </li>
       </ng-container>
     </ul>
   </nz-sider>
   <nz-layout class="right-layout">
-    <nz-header></nz-header>
+    <nz-header>
+      <button nz-button (click)="changeLanguage('en-EN')">English</button>
+      <button nz-button (click)="changeLanguage('vi-VN')">VI</button>
+    </nz-header>
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>

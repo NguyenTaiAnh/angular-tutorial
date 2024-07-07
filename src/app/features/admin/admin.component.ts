@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AdminConfigService } from '../../core/services/admin/admin.config';
 import { AdminTabs } from '../../core/services/admin/admin.model';
-import { BaseComponentService } from '../../core/services/base-component.service';
+import { LanguageService } from '../../core/services/languege.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',
 })
-export class AdminComponent extends BaseComponentService implements OnInit {
+export class AdminComponent implements OnInit {
   tabs!: AdminTabs[];
+  //  constructor(private languageService: LanguageService, private translate: TranslateService) {}
 
   constructor(
-    private _adminConfig: AdminConfigService
+    private _adminConfig: AdminConfigService,
+    private languageService: LanguageService,
+    private translate: TranslateService
   ) {
-    super();
     this.tabs = _adminConfig.tabs();
-    
   }
 
   ngOnInit(): void {
-    console.log('addming admin');
+    console.log('addming admin', this.translate);
   }
 }

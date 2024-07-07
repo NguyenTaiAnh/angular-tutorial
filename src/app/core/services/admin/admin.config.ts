@@ -35,7 +35,7 @@ export class AdminConfigService {
         component: AuthorsComponent
       },
       {
-        name: 'Categories',
+        name: 'categories',
         icon: '',
         component: CategoriesComponent
       },
