@@ -6,7 +6,7 @@ import { StoriesModel } from './stories.model';
 @Injectable({
   providedIn: 'root',
 })
-export class StoriesStateService {
+export class StoryStateService {
   storyForm: FormGroup<{
     id: FormControl<string>;
     title: FormControl<string>;
