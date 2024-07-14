@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, QueryList, ViewChildren } from '@angular/core';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-table-field',
@@ -6,14 +7,14 @@ import { AfterViewInit, Component, Input } from '@angular/core';
   styleUrl: './table-field.component.scss'
 })
 export class TableFieldComponent implements AfterViewInit  {
-  @Input() dataList!: any[];
+  @ViewChildren('fieldTemplate') fieldTable?: QueryList<any>
   @Input() columns!: any[];
-  @Input() rowActions?: any[];
-  @Input() trackByKey: any;
 
   constructor(){}
   ngAfterViewInit(): void {
-    console.log("ccc",this.dataList);
+    this.fieldTable?.forEach(item=>{
+      console.log("sdfakdjhfakjldhfaljkdhfjakhdfljkạdhflạhsdf",item);
+    })
   }
   action(data: any) {
     console.log(data); // Implement your action logic here

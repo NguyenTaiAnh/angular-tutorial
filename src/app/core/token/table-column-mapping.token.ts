@@ -18,6 +18,7 @@ export type TableColumnMapping = {
     image: TableColumn;
     views: TableColumn;
     likes: TableColumn;
+    action: TableColumn;
     // comment_id: TableColumn;
   };
   CHAPTER: {
@@ -44,60 +45,72 @@ export function initAdminTable(): Pick<TableColumnMapping, 'STORIES'> {
         header: translate('Field.StoryId'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
       },
       title: {
         field: 'title',
         header: translate('Field.StoryName'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
       },
       tag: {
         field: 'tag',
         header: translate('Field.StoryTag'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
       },
       synopsis: {
         field: 'synopsis',
         header: translate('Field.StorySynopsis'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"150px",
       },
       author_id: {
         field: 'author_id',
         header: translate('Field.AuthorId'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
       },
       status: {
         field: 'status',
         header: translate('Field.Status'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
+        isCustom: true
       },
       categoy_id: {
         field: 'categoy_id',
         header: translate('Field.CategoryId'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"120px",
       },
       image: {
         field: 'image',
         header: translate('Field.Image'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
+        isCustom: true,
       },
       views: {
         field: 'views',
         header: translate('Field.Views'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
       },
       likes: {
         field: 'likes',
         header: translate('Field.Likes'),
         search: 'text',
         isTextEllipsis: true,
+        withColumn:"100px",
       },
       ...getActionColumn(),
     },

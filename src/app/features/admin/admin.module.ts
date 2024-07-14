@@ -1,3 +1,4 @@
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
@@ -14,6 +15,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { SettingComponent } from './setting/setting.component';
 import { TableModule } from '../../UI/table/table.module';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TableFieldModule } from '../../UI/table-field/table-field.module';
 
 
 
@@ -25,7 +27,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     NzIconModule,
     AdminRoutingModule,
     TableModule,
-    TranslateModule
+    TranslateModule,
+    TableFieldModule,
   ],
   exports:[AdminComponent]
 })

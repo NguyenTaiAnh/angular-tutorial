@@ -1,23 +1,46 @@
-<nz-table #basicTable [nzData]="dataList">
+<nz-table #dataTable [nzData]="dataList"  [nzScroll]="{ x: '1150px', y: '10%' }">
   <thead>
     <tr>
-      <th *ngFor="let column of columns" >
-        {{ column.header }}
-      </th>
+      <ng-container *ngFor="let column of columns">
+        <th #fieldTable [nzWidth]="column.withColumn">
+          {{ column.header }}
+        </th>
+      </ng-container>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of dataList">
-      <td *ngFor="let column of columns">{{ data[column.field] }}</td>
-
-      <!-- {{action(data[])}} -->
-      <!-- <td>{{ data.name }}</td>
-        <td>{{ data.age }}</td>
-        <td>{{ data.address }}</td>
-        <td>
-          <a>Action 一 {{ data.name }}</a>
-          <a>Delete</a>
-        </td> -->
-    </tr>
+    <ng-container *ngIf="columns.length > 0">
+      <tr *ngFor="let data of dataTable.data">
+        <ng-container *ngFor="let column of columns">
+          <ng-container *ngIf="!column.isCustom">
+            <td [nzLeft]="column.field === 'title' ">{{ data[column.field] }}</td>
+          </ng-container>
+          <ng-container *ngIf="column.isCustom">
+            <ng-container
+              *ngTemplateOutlet="
+                customTemplate;
+                context: { $implicit: column.field, data: data }
+              "
+            ></ng-container>
+          </ng-container>
+        </ng-container>
+        <td nzRight>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+      </tr>
+    </ng-container>
   </tbody>
 </nz-table>
+
+<ng-template #customTemplate let-field let-data="data">
+  <!-- Custom field rendering logic here -->
+  <td *ngIf="field == 'image'">
+    <!-- Ví dụ: render custom với format đặc biệt -->
+    <img [src]="data[field]">
+    <!-- Hoặc sử dụng một component khác để render -->
+  </td>
+  <td *ngIf="field == 'status'">
+    <span style="background-color: red; color: white;"> {{data[field]}}</span>
+  </td>
+</ng-template>

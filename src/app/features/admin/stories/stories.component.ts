@@ -49,6 +49,7 @@ export class StoriesComponent
       this.tableColumnMapping.STORIES.image,
       this.tableColumnMapping.STORIES.views,
       this.tableColumnMapping.STORIES.likes,
+      this.tableColumnMapping.STORIES.action
     ];
   }
   getSearchObservableFunc(): TableSearchObservableFunc {

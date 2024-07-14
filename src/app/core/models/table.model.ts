@@ -33,6 +33,8 @@ export interface TableColumn {
 
   /** Is text word-wrap:break-word; */
   isTextBreakWord?: boolean;
+
+  withColumn?: string;
 }
 
 /** TableSearchObservableFunc params */
