@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <ng-container *ngFor="let column of columns">
-        <th #fieldTable [nzWidth]="column.withColumn">
+        <th [nzLeft]="column.field == 'title'" #fieldTable [nzWidth]="column.withColumn">
           {{ column.header }}
         </th>
       </ng-container>
