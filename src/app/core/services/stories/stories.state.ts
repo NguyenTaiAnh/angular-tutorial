@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { StoriesModel } from './stories.model';
+import { StoriesModel, StoryUpdateModel } from './stories.model';
 
 @Injectable({
   providedIn: 'root',
@@ -117,5 +117,34 @@ export class StoryStateService {
       loading: false,
       error: error,
     });
+  }
+
+  onUpdateStoryRequest() {
+    this.updateStoryState.next({
+      loading: true,
+      error: '',
+    });
+  }
+
+  onUpdateStorySuccess(updateStory: StoryUpdateModel, id: any) {
+    this.storyState.next({
+      ...this.storyState.getValue(),
+      loading: false,
+      error: '',
+      data: this.storyState.getValue().data.map((item: StoriesModel) => {
+        return item.id == id ? { ...item, ...updateStory } : item;
+      }),
+    });
+    this.updateStoryState.next({
+      error: "",
+      loading: false
+    });
+  }
+
+  onUpdateStoryFailure(error:string){
+    this.updateStoryState.next({
+        loading:false,
+        error: error
+    })
   }
 }

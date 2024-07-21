@@ -26,4 +26,4 @@ export interface StoriesModel{
 //     likes: number;
 //     comment_id:number
 // }
-export type StoryUpdateModel = Pick<StoriesModel,'id'>
+export type StoryUpdateModel = Omit<StoriesModel,'id'>
